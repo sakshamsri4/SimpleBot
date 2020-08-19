@@ -9,14 +9,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import SignUp from './app/components/SignUp';
 import SignIn from './app/components/SignIn';
-
+import Profile from './app/components/Profile';
 
 const Stack = createStackNavigator();
 
 export default function MyStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignUp" screenOptions={{
+      <Stack.Navigator initialRouteName="signin" screenOptions={{
             headerStyle: {
                 backgroundColor: 'rgba(39,59,82,1)',
 
@@ -29,7 +29,8 @@ export default function MyStack() {
             },
      }}>
      <Stack.Screen name="SignUp" component={SignUp}  options={{ title: 'SignUp' }}/>
-        <Stack.Screen name="SignIn" component={SignIn} options={{ title: 'SignIn' }} />
+        <Stack.Screen name="signin" component={SignIn} options={{ title: 'SignIn' }} />
+        <Stack.Screen name="audio_profile" component={Profile} options={{ title: 'Audio Profile' }} />
           </Stack.Navigator>
         </NavigationContainer>
       );
