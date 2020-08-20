@@ -19,10 +19,12 @@ export default class SignIn extends React.Component{
         this.toggleSwitch = this.toggleSwitch.bind(this);
         this.state={
         email:'',
-        password: '',
+        password:'',
+        passw:'',
         correct:true,
         showPassword:true
         }
+
     }
 
     toggleSwitch() {
@@ -43,13 +45,28 @@ export default class SignIn extends React.Component{
     }
 
     MoveSignup=()=>{
-        this.props.navigation.navigate('signup');
+        this.props.navigation.navigate('SignUp');
     }
-
+    handlePassword = (text)=> {
+         this.setState({password:text})
+    }
     HomeScreen=()=>{
+       // const {password}  = this.state.passw;
+        //console.log(password);
+        console.log(this.state.email);
+        console.log(this.state.passw);
       // TODO:  if(correct is true and email is not null and pass is not null and email is sakshamsri4@gmail.com and pass is "12345")
+       if(this.state.correct==true &&this.state.email!=null&&this.state.passw!=null&&this.state.email=='sakshamsri4@gmail.com'
+            && this.state.passw=="12345")
+       {
         this.props.navigation.navigate('audio_profile');
-      //  else
+      }  else
+      {
+      console.log(this.state.passw);
+      alert("Invalid Credentials!!!");
+      //alert('Enter a valid Email and Username');
+      }
+
       //TODO:  alert(Please enter valid email)
 
     }
@@ -57,8 +74,9 @@ export default class SignIn extends React.Component{
     render()
     {
         const isCorrect =this.state.correct;
+        const showPassword = this.state.showPassword;
         return (
-            <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
+            //<KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
             <View style={styles.container}>
                 <Text style={styles.header}>SignIn</Text>
                 <TextInput
@@ -72,19 +90,17 @@ export default class SignIn extends React.Component{
                         //onchangeText={(email)=>this.setState({email})}
                         underlineColorAndroid='transparent'
                 />
-                <TextInput
-                    style={styles.textInput}placeholder='Password'
-                    onchangeText={(password)=>this.setState({password})}
-                    secureTextEntry={this.state.showPassword}
-                    underlineColorAndroid='transparent'
-                />
-                <View >
-                    <Switch
-                          onValueChange={this.toggleSwitch}
-                          value={!this.state.showPassword}
-                    />
-                    <Text>Show Password</Text>
-                </View>
+
+                <TextInput secureTextEntry={showPassword} style={styles.textInput}
+                 onChangeText={passw => this.setState({passw})}/>
+
+                <View style={{alignSelf:'flex-end',alignItems:'center', marginBottom:30, flexDirection:'row'}}>
+                                    <Text style={{marginRight:10}}>Show Password</Text>
+                                    <Switch
+                                        onValueChange={this.toggleSwitch}
+                                        value={!this.state.showPassword}
+                                    />
+                                </View>
                 <TouchableOpacity
                     disabled ={!this.state.correct}
                     style={styles.btn}
@@ -98,7 +114,7 @@ export default class SignIn extends React.Component{
                     <Text>Not a member? SignUp Now </Text>
                 </TouchableOpacity>
             </View>
-            </KeyboardAvoidingView>
+         //   </KeyboardAvoidingView>
         );
     }
 }

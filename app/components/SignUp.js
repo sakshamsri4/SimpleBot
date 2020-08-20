@@ -17,22 +17,22 @@ import {
 
 const Stack = createStackNavigator();
 export default class SignUp extends React.Component{
-constructor(props)
-{
-super(props);
-this.toggleSwitch = this.toggleSwitch.bind(this);
-this.state={
-email:'',
-password: '',
-confirm_password:'',
-correct:true,
-showPassword:true
-}
-}
+    constructor(props)
+    {
+    super(props);
+    this.toggleSwitch = this.toggleSwitch.bind(this);
+    this.state={
+    email:'',
+    password: '',
+    confirm_password:'',
+    correct:true,
+    showPassword:true
+    }
+    }
 
-toggleSwitch() {
-    this.setState({ showPassword: !this.state.showPassword });
-  }
+    toggleSwitch() {
+        this.setState({ showPassword: !this.state.showPassword });
+    }
 /*
 componentDidMount()
 {
@@ -48,49 +48,49 @@ if(value!==null)
 this.props.navigation.navigate('Profile');
 }
 }*/
-validate = (text) => {
- // console.log(text);
-  let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (reg.test(text) === false) {
-    //console.log("Email is Not Correct");
-    this.setState({ email: text,correct:false})
+    validate = (text) => {
+    // console.log(text);
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (reg.test(text) === false) {
+        //console.log("Email is Not Correct");
+        this.setState({ email: text,correct:false})
 
-  }
-  else {
-    this.setState({ email: text,correct:true})
-    //  console.log("Email is Correct");
-  }
-}
-
-
+    }
+    else {
+        this.setState({ email: text,correct:true})
+        //  console.log("Email is Correct");
+        }
+    }
 
 
-Logout=()=>{
-if(this.state.password==this.state.confirm_password)
-{
-alert('Submit');
-}
-else
-{
-alert('Sign Up');
-}
-}
 
 
-ToSignIn=()=>{
-this.props.navigation.navigate('signin');
-}
+    Logout=()=>{
+        if(this.state.password==this.state.confirm_password )
+            {
+                alert('Submit');
+            }
+        else
+        {
+            alert('Sign Up');
+        }
+    }
 
 
-render()
-{
-const isCorrect =this.state.correct;
-  return (
-        <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
-        <View style={styles.container}>
-        <Text style={styles.header}>SignUp</Text>
+    ToSignIn=()=>{
+        this.props.navigation.navigate('signin');
+    }
 
-        <TextInput
+
+    render()
+        {
+            const isCorrect =this.state.correct;
+        return (
+          //  <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
+            <View style={styles.container}>
+            <Text style={styles.header}>SignUp</Text>
+
+            <TextInput
                         style={styles.textInput}placeholder='Email'
                         onChangeText={(text) => this.validate(text)}
                           value={this.state.email}
@@ -100,37 +100,37 @@ const isCorrect =this.state.correct;
                                   backgroundColor: 'white',borderWidth: 1,borderColor: isCorrect?'green':'red'}}
                         //onchangeText={(email)=>this.setState({email})}
                         underlineColorAndroid='transparent'
-                />
+            />
 
 
-        <TextInput
-                style={styles.textInput}placeholder='Password'
-                onchangeText={(password)=>this.setState({password})}
-                secureTextEntry={this.state.showPassword}
-                underlineColorAndroid='transparent'
-        />
-                <TextInput
+            <TextInput
+                        style={styles.textInput}placeholder='Password'
+                        onchangeText={(password)=>this.setState({password})}
+                        secureTextEntry={this.state.showPassword}
+                        underlineColorAndroid='transparent'
+            />
+            <TextInput
                         style={styles.textInput}placeholder='Confirm Password'
                         secureTextEntry={this.state.showPassword}
                         onchangeText={(confirm_password)=>this.setState({confirm_password})}
                         underlineColorAndroid='transparent'
-                />
-                <View >
+            />
+            <View >
                 <Switch
                           onValueChange={this.toggleSwitch}
                           value={!this.state.showPassword}
-                        />
-                        <Text>Show Password</Text>
+                />
+            <Text>Show Password</Text>
 
-                        </View>
-        <TouchableOpacity
-        disabled ={!this.state.correct}
-        style={styles.btn}
-        onPress={this.Logout}>
-        <Text> SignUp </Text>
-        </TouchableOpacity>
+        </View>
+            <TouchableOpacity
+                disabled ={!this.state.correct}
+                style={styles.btn}
+                onPress={this.Logout}>
+                <Text> SignUp </Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity
+            <TouchableOpacity
                 style={{padding:20,
                        alignItems:'center'}}
                 onPress={this.ToSignIn}>
@@ -139,7 +139,7 @@ const isCorrect =this.state.correct;
 
         </View>
 
-        </KeyboardAvoidingView>
+      //  </KeyboardAvoidingView>
     );
 }
 
