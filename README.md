@@ -1,33 +1,25 @@
-##Simple
-
-Audio Player and Speech to Text App
+<h2> React Native Cross-Platform mobile App </h2>
 
 
-##Ios and Android React Native Project
+<h4>Features of the app:</h4> 
+1. User Login with username and password.<br>
+2. Email valdation for username. <br>
+2. Show password toggle option. <br>
+3. Audio recording and playing. <br>
+4. Voice transript of the audio.  <br><br>
 
-The objective of this app is to provide Audio Recording features and Transcription.
+<h4>Technologies Used: </h4> 
+1.JavaScript <br>
+2.React Native <br>
+3.Git and Github <br>
+<br>
+<h4>Packages Used:</h4>
+1.react-native-audio --save<br>
+2.react-native-voice --save<br>
+3.react-native-sound --save<br>
+4.react-navigation <br> <br>
 
-Some features of this app are:
-
-1.User Registration/Login
-2.Show password feature
-3.Record, pause,stop and play the audio.
-4.Transription of the audio.
-
-Technologies Used:
-1.JavaScript
-2.React Native
-3.Git and Github
-
-Packages Used:
-1.npm install react-native-audio --save
-  react-native link react-native-audio
-2.npm install @react-navigation/native
-3.npm i react-native-voice --save
-4.npm install react-native-sound --save
-5.npm install react-navigation-stack @react-native-community/masked-view react-native-safe-area-context
-
-Following Screenshots of the app:
+<h4>Screenshots:</h4>
 <img src="./app/screenshot/s1.jpg" widt="500" height="400">
 <img src="./app/screenshot/s2.jpg" widt="500" height="400">
 <img src="./app/screenshot/s3.jpg" widt="500" height="400">
