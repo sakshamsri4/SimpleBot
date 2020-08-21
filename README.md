@@ -8,16 +8,11 @@
 3. Audio recording and playing. <br>
 4. Voice transript of the audio.  <br><br>
 
-<h4>Technologies Used: </h4> 
-1.JavaScript <br>
-2.React Native <br>
-3.Git and Github <br>
-<br>
 <h4>Packages Used:</h4>
-1.react-native-audio --save<br>
-2.react-native-voice --save<br>
-3.react-native-sound --save<br>
-4.react-navigation <br> <br>
+1. react-native-audio --save<br>
+2. react-native-voice --save<br>
+3. react-native-sound --save<br>
+4. react-navigation <br> <br>
 
 <h4>Screenshots:</h4>
 <img src="./app/screenshot/s1.jpg" widt="500" height="400">
