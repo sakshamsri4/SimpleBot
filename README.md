@@ -3,10 +3,10 @@
 
 <h4>Features of the app:</h4> 
 1. User Login with username and password.<br>
-2. Email valdation for username. <br>
+2. Email validation for username. <br>
 2. Show password toggle option. <br>
 3. Audio recording and playing. <br>
-4. Voice transript of the audio.  <br><br>
+4. Voice transcript of the audio.  <br><br>
 
 <h4>Packages Used:</h4>
 1. react-native-audio --save<br>
