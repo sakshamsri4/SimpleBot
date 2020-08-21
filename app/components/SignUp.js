@@ -88,7 +88,7 @@ this.props.navigation.navigate('Profile');
         return (
           //  <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
             <View style={styles.container}>
-            <Text style={styles.header}>SignUp</Text>
+            <Text style={styles.header}>SignUp.</Text>
 
             <TextInput
                         style={styles.textInput}placeholder='Email'

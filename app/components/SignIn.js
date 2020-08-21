@@ -53,16 +53,16 @@ export default class SignIn extends React.Component{
     HomeScreen=()=>{
        // const {password}  = this.state.passw;
         //console.log(password);
-        console.log(this.state.email);
-        console.log(this.state.passw);
+      // console.log(this.state.email);
+       // console.log(this.state.passw);
       // TODO:  if(correct is true and email is not null and pass is not null and email is sakshamsri4@gmail.com and pass is "12345")
        if(this.state.correct==true &&this.state.email!=null&&this.state.passw!=null&&this.state.email=='sakshamsri4@gmail.com'
             && this.state.passw=="12345")
        {
-        this.props.navigation.navigate('audio_profile');
+        this.props.navigation.navigate('audio_recorder');
       }  else
       {
-      console.log(this.state.passw);
+    // console.log(this.state.passw);
       alert("Invalid Credentials!!!");
       //alert('Enter a valid Email and Username');
       }
@@ -78,7 +78,7 @@ export default class SignIn extends React.Component{
         return (
             //<KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
             <View style={styles.container}>
-                <Text style={styles.header}>SignIn</Text>
+                <Text style={styles.header}>LogIn.</Text>
                 <TextInput
                         style={styles.textInput}placeholder='Email'
                         onChangeText={(text) => this.validate(text)}
@@ -91,7 +91,7 @@ export default class SignIn extends React.Component{
                         underlineColorAndroid='transparent'
                 />
 
-                <TextInput secureTextEntry={showPassword} style={styles.textInput}
+                <TextInput secureTextEntry={showPassword} style={styles.textInput} placeholder='Password'
                  onChangeText={passw => this.setState({passw})}/>
 
                 <View style={{alignSelf:'flex-end',alignItems:'center', marginBottom:30, flexDirection:'row'}}>
@@ -134,6 +134,7 @@ const styles=StyleSheet.create({
     },
 
     header:{
+
         fontSize:24,
         marginBottom:60,
         color:'#fff',

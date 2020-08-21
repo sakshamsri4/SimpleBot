@@ -9,7 +9,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import SignUp from './app/components/SignUp';
 import SignIn from './app/components/SignIn';
-import Profile from './app/components/Profile';
+import AudioExample from './app/components/audio_recorder';
+import Transcript from './app/components/transcript';
 
 const Stack = createStackNavigator();
 
@@ -30,8 +31,10 @@ export default function MyStack() {
      }}>
      <Stack.Screen name="SignUp" component={SignUp}  options={{ title: 'SignUp' }}/>
         <Stack.Screen name="signin" component={SignIn} options={{ title: 'SignIn' }} />
-        <Stack.Screen name="audio_profile" component={Profile} options={{ title: 'Audio Profile' }} />
-          </Stack.Navigator>
+
+        <Stack.Screen name="audio_recorder" component={AudioExample} options={{ title: 'AudioExample' }} />
+          <Stack.Screen name="transcript" component={Transcript} options={{ title: 'AudioExample' }} />
+                    </Stack.Navigator>
         </NavigationContainer>
       );
     }

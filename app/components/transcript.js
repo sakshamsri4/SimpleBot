@@ -7,7 +7,7 @@ import {
   AppRegistry,
 } from 'react-native';
 import Voice from 'react-native-voice';
-export default class Profile extends React.Component {
+export default class Transcript extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,6 +36,7 @@ onSpeechResults(e) {
     this.setState({
       results: e.value,
     });
+   // console.log(e.value);
   }
 async _startRecognition(e) {
     this.setState({
@@ -44,6 +45,7 @@ async _startRecognition(e) {
       results: [],
     });
     try {
+       // console.log("Started voice");
       await Voice.start('en-US');
     } catch (e) {
       console.error(e);
@@ -72,4 +74,4 @@ const styles = StyleSheet.create({
     top: '400%',
   },
 });
-AppRegistry.registerComponent('audio_profile', () => VoiceNative);
+//AppRegistry.registerComponent('transcript', () => VoiceNative);
